@@ -1,10 +1,6 @@
 const ItemListContainer = (props) => {
-
     return (
-        <>
-            <p>{props.greeting}</p>
-        </>
+        <p>{props.greeting}</p>
     )
 }
-
 export default ItemListContainer
