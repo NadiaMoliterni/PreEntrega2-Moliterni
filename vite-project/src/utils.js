@@ -1,6 +1,4 @@
 export function getProductos() {
-    console.log("get productos...")
-
     return fetch("https://fakestoreapi.com/products")
         .then((respuesta) => {
 

@@ -1,12 +1,20 @@
-import React from 'react'
+import React from "react"
 
-const ItemDetail = ({ name, description, price, image }) => (
-  <div className="item-detail">
-    <img src={image} alt={name} />
-    <h2>{name}</h2>
-    <p>{description}</p>
-    <p>Precio: ${price}</p>
-  </div>
-)
+const ItemDetail = ({ item }) => {
+    return (
+        <div className="container">
+            <div className="card-container">
+                <img src={item.image} alt={item.title} />
+                <div key={producto.id}>
+                    <h2>{producto.title}</h2>
+                    <p>Precio: ${producto.price}</p>
+                    <p>{producto.description}</p>
+                    <p>{producto.category}</p>
 
+                </div>
+            </div>
+        </div>
+
+    )
+}
 export default ItemDetail

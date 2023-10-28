@@ -1,18 +1,31 @@
-import { Route, Routes } from "react-router-dom"
-import Testpage from "../pages/Testpage"
+import React, { useEffect, useState } from 'react'
 import ItemDetail from './ItemDetail'
+import { useParams } from 'react-router-dom'
 
-const ItemDetailContainer = () => {
+function ItemDetailContainer() {
+  const [productos, setProductos] = useState([])
+  //const [id, setId] = useState(1)
+  const id = useParams().id
+
+  const handleAgregarCarrito = () => {
+    setId(id + 1)
+
+  }
+
+  useEffect(() => {
+    fetch("https://fakestoreapi.com/products")
+      .then((respuesta) => {
+        respuesta.json()
+      })
+      .then((data) => {
+        setProductos(data)
+      })
+
+
+  }, [id])
+
   return (
-    <Routes>
-      <Route path="/" element={<p>Home</p>} />
-      <Route path="/women's clothing" element={<p>Indumentaria Mujer</p>} />
-      <Route path="/men's clothing" element={<p>Indumentaria Hombre</p>} />
-      <Route path="/cart" element={<p>Carrito</p>} />
-      <Route path="/contact" element={<p>Contacto</p>} />
-      <Route path="/detalle/:id" element={<Testpage />} />
-      <Route path="*" element={<p>404 ERROR</p>} />
-    </Routes>
+    <ItemDetail productos={productos}/>
   )
 }
 

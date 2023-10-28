@@ -8,13 +8,14 @@ const NavBar = (props) => {
     return (
         <header className={"header"}>
             <Link to="/">
-                <h1>{props.nombre}</h1>
+                <h1>
+                    MatMoli
+                </h1>
             </Link>
 
             <nav className="navbar-container">
 
-                <Link to="/women's clothing">Indumentaria Mujer</Link>
-                <Link to="/men's clothing">Indumentaria Hombre</Link>
+                <Link to="/productos/category">Categorias</Link>
                 <Link to="/cart">Carrito</Link>
                 <Link to="/contact">Contacto</Link>
 

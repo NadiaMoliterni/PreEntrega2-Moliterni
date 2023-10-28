@@ -1,21 +1,25 @@
-import { useRef, useState } from "react"
+import { useEffect } from "react";
 
-function Formulario() {
-  const inputRef = useRef(null);
+const Formulario = () => {
+  
+  const addToCart = (event) => {
+  }
 
-  const [inputValue, setInputValue] = useState("");
+  const handleChange = (e) => {
+    console.log(e.target.value)
+  }
 
-  const handleClick = () => {
-    console.log(inputRef.current.value)
-    setInputValue(inputRef.current.value)
+  const handleSubmit = () => {
   }
 
   return (
     <div>
-      <input type="text" ref={inputRef} />
-      <button onClick={handleClick} className="btn">Enviar</button>
-      <p>{inputValue}</p>
-    </div>
+      <form onSubmit={() => console.log("submit")}>
+      <input onChange={(e) => console.log(e)}/>
+      <button type="submit">sub</button>
+      </form>
+
+</div>
   )
 }
 

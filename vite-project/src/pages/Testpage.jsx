@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom"
+/* import { useParams } from "react-router-dom"
 import { useState, useEffect } from "react"
 import Productos from "../productos.json"
 
@@ -30,4 +30,4 @@ function Testpage() {
   )
 }
 
-export default Testpage
+export default Testpage */

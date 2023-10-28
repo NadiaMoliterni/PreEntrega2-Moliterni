@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "title": "Terence",
+        "price": 50,
+        "description": "tmayell0@ifeng.com",
+        "cathegory": "Male",
+        "image": "http://dummyimage.com/211x100.png/cc0000/ffffff"
+    },
+    {
+        "id": 2,
+        "title": "Jodee",
+        "price": 20,
+        "description": "jstanger1@weebly.com",
+        "cathegory": "Female",
+        "image": "http://dummyimage.com/221x100.png/cc0000/ffffff"
+    },
+    {
+        "id": 3,
+        "title": "Hadlee",
+        "price": 38,
+        "description": "hnajara2@exblog.jp",
+        "cathegory": "Bigender",
+        "image": "http://dummyimage.com/162x100.png/ff4444/ffffff"
+    }
+]

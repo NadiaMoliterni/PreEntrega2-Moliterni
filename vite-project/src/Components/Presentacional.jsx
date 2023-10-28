@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+/* import { Link } from "react-router-dom"
 
 function Presentacional(props) {
   console.log(props)
@@ -19,4 +19,4 @@ function Presentacional(props) {
   )
 }
 
-export default Presentacional
+export default Presentacional */
