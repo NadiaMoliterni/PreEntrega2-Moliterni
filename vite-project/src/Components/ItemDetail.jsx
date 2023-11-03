@@ -1,20 +1,20 @@
 import React from "react"
 
-const ItemDetail = ({ item }) => {
-    return (
-        <div className="container">
-            <div className="card-container">
-                <img src={item.image} alt={item.title} />
-                <div key={producto.id}>
-                    <h2>{producto.title}</h2>
-                    <p>Precio: ${producto.price}</p>
-                    <p>{producto.description}</p>
-                    <p>{producto.category}</p>
-
-                </div>
-            </div>
+const ItemDetail = ({ item, handleAgregarAlCarrito }) => {
+  return (
+    <div className="container">
+      <div className="card-container">
+        <img src={item.image} alt={item.title} />
+        <div key={item.id}>
+          <h2>{item.title}</h2>
+          <p>Precio: ${item.price}</p>
+          <p>{item.description}</p>
+          <p>{item.category}</p>
+          <button onClick={() => handleAgregarAlCarrito(item)}>Agregar al carrito</button>
         </div>
+      </div>
+    </div>
+  );
+};
 
-    )
-}
 export default ItemDetail

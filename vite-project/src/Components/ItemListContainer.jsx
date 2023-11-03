@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react"
 import productos from "../data/productos.json"
 import ItemList from "./ItemList"
+import { useParams } from "react-router-dom"
 
 const ItemListContainer = () => {
 
-  //const [productos, setProductos] = useState([]);
+  const [productos, setProductos] = useState([])
+  const [titulo, setTitulo] = useState("Productos")
+  const category = useParams().category
 
   const pedirProductos = () => {
     return new Promise((resolve, reject) => {
@@ -16,86 +19,27 @@ const ItemListContainer = () => {
     
   pedirProductos()
   .then((respuesta) => {
-    console.log(respuesta)
+    if (category) {
+      const productosFiltrados = respuesta.filter((prod) => prod.category === category)
+      console.log("Productos filtrados:", productosFiltrados)
+      setProductos(productosFiltrados)
+      setTitulo(category)
+    } else {
+      console.log("Mostrar todos los productos")
+      setProductos(respuesta)
+      setTitulo("Productos")
+    }
   })
-  .catch((error) => {
-      // Manejo de errores en caso de que la solicitud falle
-      console.error("Error al obtener productos. Detalles del error:", error)
-    })
-    
-    
 
-  }), ([])
+  }, [category])
   
-
   return (
     <div>
-      <ItemList productos={productos} />
+      <ItemList productos={productos} titulo={titulo}/>
     </div>
   )
+
 }
 
 export default ItemListContainer
  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import React, { useState, useEffect } from "react"
-// import ItemList from "./ItemList"
-// //import Item from "./Item"
-
-// function ItemListContainer() {
-//   // Estados
-//   const [productos, setProductos] = useState([]);
-
-//   // Efectos
-//   useEffect(() => {
-    
-//     // Realizar la solicitud a la API y obtener los productos
-//     fetch("https://fakestoreapi.com/products")
-//       .then((respuesta) => {
-
-//         if (respuesta.status < 400) {
-//           return respuesta.json()
-//         } else {
-//             console.log("termino el pedido mal")
-//         }
-//       })
-//       .then((datos) => {
-//         console.log({ productos: datos })
-//         setProductos(datos)
-//       })
-//       .catch((error) => {
-//         console.error("Error en la solicitud a la API:", error)
-//       })
-//   }, [])
-
-//   // Vista
-//   return <div>
-//   <ItemList productos={productos} />
-//   {/* {productos.map((producto) => (
-//     <Item
-//       key={producto.id}
-//       name={producto.title}
-//       image={producto.image}
-//       price={producto.price}
-//     />
-//   ))} si lo muestro se ve doble los productos 
-//  */}</div>
-// }
-
-// export default ItemListContainer 

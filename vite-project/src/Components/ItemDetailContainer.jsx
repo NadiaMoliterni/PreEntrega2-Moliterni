@@ -4,29 +4,25 @@ import { useParams } from 'react-router-dom'
 
 function ItemDetailContainer() {
   const [productos, setProductos] = useState([])
-  //const [id, setId] = useState(1)
-  const id = useParams().id
+  const [carrito, setCarrito] = useState([])
+  const { id } = useParams()
 
-  const handleAgregarCarrito = () => {
-    setId(id + 1)
-
+  const handleAgregarCarrito = (producto) => {
+    setCarrito([...carrito, producto])
   }
 
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products")
-      .then((respuesta) => {
-        respuesta.json()
-      })
-      .then((data) => {
-        setProductos(data)
-      })
-
-
-  }, [id])
+    fetch('https://fakestoreapi.com/products')
+      .then((respuesta) => respuesta.json())
+      .then((data) => setProductos(data))
+  }, [])
 
   return (
-    <ItemDetail productos={productos}/>
+    <div>
+      {productos.map((producto) => (
+        <ItemDetail key={producto.id} item={producto} handleAgregarAlCarrito={handleAgregarCarrito} />
+      ))}
+    </div>
   )
 }
-
 export default ItemDetailContainer
