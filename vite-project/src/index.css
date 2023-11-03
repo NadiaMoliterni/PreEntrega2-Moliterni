@@ -61,11 +61,6 @@ main {
   font-size: 16px;
 }
 
-.imagen-api {
-  width: 50%;
-  height: 50%;
-}
-
 .card-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);

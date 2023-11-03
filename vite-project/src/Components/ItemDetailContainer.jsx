@@ -13,6 +13,7 @@ function ItemDetailContainer() {
 
   useEffect(() => {
     fetch('https://fakestoreapi.com/products')
+
       .then((respuesta) => respuesta.json())
       .then((data) => setProductos(data))
   }, [])

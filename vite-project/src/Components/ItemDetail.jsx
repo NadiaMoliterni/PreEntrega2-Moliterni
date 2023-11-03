@@ -9,7 +9,7 @@ const ItemDetail = ({ item, handleAgregarAlCarrito }) => {
           <h2>{item.title}</h2>
           <p>Precio: ${item.price}</p>
           <p>{item.description}</p>
-          <p>{item.category}</p>
+          <p>Categoria: {item.category}</p>
           <button onClick={() => handleAgregarAlCarrito(item)}>Agregar al carrito</button>
         </div>
       </div>
