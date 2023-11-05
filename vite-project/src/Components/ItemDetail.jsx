@@ -14,7 +14,7 @@ const ItemDetail = ({ item, handleAgregarAlCarrito }) => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
 export default ItemDetail

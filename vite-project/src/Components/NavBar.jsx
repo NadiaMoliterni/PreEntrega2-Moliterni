@@ -15,11 +15,11 @@ const NavBar = () => {
 
             <nav className="navbar-container">
 
-                <Link to="/productos/clothing">Clothing</Link>
+                <Link to="/productos/women's%20clothing">Indumentaria Mujer</Link>
+                <Link to="/productos/men's%20clothing">Indumentaria Hombre</Link>
                 <Link to="/productos/electronics">Electronics</Link>
-                <Link to="/productos/jewelery">Jewelery</Link >
+                <Link to="/productos/jewelery">Jewelery</Link>
 
-                <Link to="/productos/category">Categorias</Link>
                 <Link to="/cart">Carrito</Link>
                 <Link to="/contact">Contacto</Link>
 

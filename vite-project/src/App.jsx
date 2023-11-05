@@ -1,33 +1,62 @@
-import NavBar from "./components/NavBar"
-import ItemListContainer from "./components/ItemListContainer"
-import ItemDetailContainer from "./components/ItemDetailContainer"
-import Footer from "./components/Footer"
-import { BrowserRouter, Route, Routes } from "react-router-dom"
-import productos from "./data/productos.json"
+import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import NavBar from "./components/NavBar";
+import ItemListContainer from "./components/ItemListContainer";
+import ItemDetailContainer from "./components/ItemDetailContainer";
+import Footer from "./components/Footer";
+import ItemDetail from "./components/ItemDetail";
 
 function App() {
-
   return (
     <BrowserRouter>
       <NavBar />
       <Routes>
-  <Route path="/" element={<ItemListContainer />} />
-  <Route path="/detalle/:id" element={<ItemDetailContainer />} />
-  <Route path="/productos" element={<ItemListContainer />} />
-  <Route path="/productos/:category" element={<ItemListContainer />} />
-{/* 
         <Route path="/" element={<ItemListContainer />} />
-        <Route path="/item/:id" element={<ItemDetailContainer />} />
-        <Route path="/detalle/:id" element={<ItemDetailContainer />} />
-        <Route path="/category/:id" element={<ItemListContainer /> } /> ??
+        {/* <Route path="/detalle/:id" element={<ItemDetailContainer />} /> */}
         <Route path="/productos" element={<ItemListContainer />} />
         <Route path="/productos/:category" element={<ItemListContainer />} />
-        <Route path="/productos/:id" element={<ItemDetailContainer />} /> ?? */}
+        <Route path="/item/:id" element={<ItemDetailContainer />} />
 
       </Routes>
       <Footer />
     </BrowserRouter>
-  )
+  );
 }
 
-export default App
+export default App;
+
+
+
+// import NavBar from "./components/NavBar"
+// import ItemListContainer from "./components/ItemListContainer"
+// import ItemDetailContainer from "./components/ItemDetailContainer"
+// import Footer from "./components/Footer"
+// import { BrowserRouter, Route, Routes } from "react-router-dom"
+// import productos from "./data/productos.json"
+
+// function App() {
+
+//   return (
+//     <BrowserRouter>
+//       <NavBar />
+//       <Routes>
+//   <Route path="/" element={<ItemListContainer />} />
+//   <Route path="/detalle/:id" element={<ItemDetailContainer />} />
+//   <Route path="/productos" element={<ItemListContainer />} />
+//   <Route path="/productos/:category" element={<ItemListContainer />} />
+// {/* 
+//         <Route path="/" element={<ItemListContainer />} />
+//         <Route path="/item/:id" element={<ItemDetailContainer />} />
+//         <Route path="/detalle/:id" element={<ItemDetailContainer />} />
+//         <Route path="/category/:id" element={<ItemListContainer /> } /> ??
+//         <Route path="/productos" element={<ItemListContainer />} />
+//         <Route path="/productos/:category" element={<ItemListContainer />} />
+//         <Route path="/productos/:id" element={<ItemDetailContainer />} /> ?? */}
+
+//       </Routes>
+//       <Footer />
+//     </BrowserRouter>
+//   )
+// }
+
+// export default App

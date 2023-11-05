@@ -1,14 +1,24 @@
 import React, { useEffect, useState } from 'react';
 import ItemList from './ItemList';
+import { useParams } from 'react-router-dom';
 
 function ItemListContainer() {
   const [productos, setProductos] = useState([]);
+  const { category } = useParams();
 
   useEffect(() => {
     fetch('https://fakestoreapi.com/products')
       .then((respuesta) => respuesta.json())
-      .then((data) => setProductos(data));
-  }, []);
+      .then((data) => {
+        if (category) {
+          // Filtrar productos por categoría si se proporciona una categoría en los parámetros.
+          const productosFiltrados = data.filter((producto) => producto.category === category);
+          setProductos(productosFiltrados);
+        } else {
+          setProductos(data);
+        }
+      });
+  }, [category]);
 
   return (
     <div>
@@ -18,6 +28,33 @@ function ItemListContainer() {
 }
 
 export default ItemListContainer;
+
+
+
+
+// import React, { useEffect, useState } from 'react'
+// import ItemList from './ItemList'
+// import { useParams } from 'react-router-dom'
+
+// function ItemListContainer() {
+//   const [productos, setProductos] = useState([])
+//   const { category } = useParams()
+
+
+//   useEffect(() => {
+//     fetch('https://fakestoreapi.com/products')
+//       .then((respuesta) => respuesta.json())
+//       .then((data) => setProductos(data));
+//   }, []);
+
+//   return (
+//     <div>
+//       <ItemList productos={productos} />
+//     </div>
+//   );
+// }
+
+// export default ItemListContainer;
 
 
 
