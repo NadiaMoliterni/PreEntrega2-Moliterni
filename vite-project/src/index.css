@@ -50,8 +50,14 @@ main {
   padding: 10px;
 }
 
+.item-count{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 .btn {
-  background-color: aquamarine;
+  background-color: rgb(252, 148, 231);
   display: inline-block;
   border: none;
   padding: 10px 20px;
