@@ -20,8 +20,8 @@ const NavBar = () => {
                 <Link to="/productos/electronics">Electronics</Link>
                 <Link to="/productos/jewelery">Jewelery</Link>
 
-                <Link to="/cart">Carrito</Link>
-                <Link to="/contact">Contacto</Link>
+                {/* <Link to="/cart">Carrito</Link> */}
+                <Link to="/contacto">Contacto</Link>
 
                 <CartWidget />
 
