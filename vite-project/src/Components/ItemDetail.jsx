@@ -14,10 +14,8 @@ const ItemDetail = ({ item }) => {
   }
   const handleSumar = () => {
     /* cantidad < item.stock &&  setCantidad(cantidad + 1)    //revisar q no funciona */
-    setCantidad(cantidad + 1)   
-
+    setCantidad(cantidad + 1)
   }
-
 
   return (
     <div className="container">

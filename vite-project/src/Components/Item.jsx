@@ -11,10 +11,8 @@ const Item = ({ producto }) => {
         <p>{producto.description}</p>
         <p>Precio: ${producto.price}</p>
         <p>Categoria: {producto.category}</p>
-
         <Link className="btn" to={`/item/${producto.id}`}>Ver más</Link>
         </article>
-
       </div>
     </div>
   )

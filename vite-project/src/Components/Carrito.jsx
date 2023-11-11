@@ -8,7 +8,6 @@ const Carrito = () => {
         vaciarCarrito()
     }
 
-
     return (
         <div className="container">
             <h1>Carrito</h1>
@@ -26,11 +25,11 @@ const Carrito = () => {
 
             {
                 carrito.length > 0 ?
-                <>
-                    <h2>Precio Total: ${precioTotal()}</h2>
-                    <button onClick={handleVaciar}>Vaciar carrito</button>
-                </> :
-                <h2>el carrito esta vacio</h2>
+                    <>
+                        <h2>Precio Total: ${precioTotal()}</h2>
+                        <button onClick={handleVaciar}>Vaciar carrito</button>
+                    </> :
+                    <h2>el carrito esta vacio</h2>
             }
         </div>
     )

@@ -19,13 +19,10 @@ const Contacto = () => {
         })
     }
 
-
-
     return (
         <div className="container">
             <h1>Contacto</h1>
             <form className="formulario" onSubmit={handleSubmit}>
-
                 <input
                     type="text"
                     placeholder="Ingrese su nombre"
@@ -40,14 +37,10 @@ const Contacto = () => {
                     onChange={handleValores}
                     name="email"
                 />
-
                 <button type="submit" className="btn">Enviar</button>
-
             </form>
-
         </div>
     )
 }
 
 export default Contacto
-//libreria??

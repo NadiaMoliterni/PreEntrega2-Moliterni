@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useState } from "react"
 
 export const CartContext = createContext()
 
@@ -27,17 +27,15 @@ export const CartProvider = ({ children }) => {
 
     const precioTotal = () => {
         const total = carrito.reduce((accumulator, prod) => {
-          const price = Number(prod.price);
-          const cantidad = Number(prod.cantidad);
-          const subtotal = price * cantidad;
-          return isNaN(subtotal) ? accumulator : accumulator + subtotal;
-        }, 0);
+          const price = Number(prod.price)
+          const cantidad = Number(prod.cantidad)
+          const subtotal = price * cantidad
+          return isNaN(subtotal) ? accumulator : accumulator + subtotal
+        }, 0)
       
-        return total;
-      };
+        return total
+      }
       
-
-
     // const precioTotal = () => {
     //     return carrito.reduce((acc, prod) => acc + prod.price * prod.cantidad, 0)
     // }
@@ -60,9 +58,6 @@ export const CartProvider = ({ children }) => {
             vaciarCarrito
         }}>
             {children}
-
         </CartContext.Provider>
     )
-
-
 }
